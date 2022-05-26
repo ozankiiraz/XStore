@@ -55,10 +55,10 @@ namespace XStore
                         "Values(@customerid,@orderdate,@shippeddate,@shipadress,@storeid)";
                     SqlCommand cmd = new SqlCommand(insertOrders, con);
                     cmd.Parameters.AddWithValue("@customerid", comboBox1.SelectedItem);
-                    cmd.Parameters.AddWithValue("@orderdate", Convert.ToDateTime(dateTimePicker1.Value));
-                    cmd.Parameters.AddWithValue("@shippeddate",Convert.ToDateTime(dateTimePicker2.Value));
+                    cmd.Parameters.AddWithValue("@orderdate", dateTimePicker1.Value);
+                    cmd.Parameters.AddWithValue("@shippeddate",dateTimePicker2.Value);
                     cmd.Parameters.AddWithValue("@shipadress", textBox1.Text);
-                    cmd.Parameters.AddWithValue("@storeid",Convert.ToInt32(comboBox2.SelectedItem));
+                    cmd.Parameters.AddWithValue("@storeid",comboBox2.SelectedItem);
 
                     con.Open();
                     cmd.ExecuteNonQuery();
