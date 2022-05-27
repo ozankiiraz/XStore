@@ -29,6 +29,8 @@ namespace XStore
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(XStorePanel));
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -43,6 +45,7 @@ namespace XStore
             this.label2 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.button6 = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -50,21 +53,23 @@ namespace XStore
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(743, 12);
+            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+            this.button1.Location = new System.Drawing.Point(145, 98);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(52, 49);
             this.button1.TabIndex = 0;
             this.button1.Text = "Getir";
-            this.button1.UseVisualStyleBackColor = true;
+            this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(9, 116);
+            this.button2.ImageKey = "updateicon.jpg";
+            this.button2.ImageList = this.imageList1;
+            this.button2.Location = new System.Drawing.Point(81, 84);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(58, 44);
             this.button2.TabIndex = 1;
-            this.button2.Text = "Getir";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -73,15 +78,16 @@ namespace XStore
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.button3);
+            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.button4);
-            this.groupBox1.Location = new System.Drawing.Point(12, 235);
+            this.groupBox1.Location = new System.Drawing.Point(22, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(211, 203);
+            this.groupBox1.Size = new System.Drawing.Size(211, 171);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Tedarikci Ekle/Guncelle";
+            this.groupBox1.Text = "Store Ekle/Guncelle";
             // 
             // label3
             // 
@@ -102,11 +108,12 @@ namespace XStore
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(104, 98);
+            this.button3.ImageKey = "updateicon.jpg";
+            this.button3.ImageList = this.imageList1;
+            this.button3.Location = new System.Drawing.Point(73, 98);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(89, 26);
+            this.button3.Size = new System.Drawing.Size(66, 49);
             this.button3.TabIndex = 20;
-            this.button3.Text = "Güncelle";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -128,23 +135,24 @@ namespace XStore
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(9, 98);
+            this.button4.ImageKey = "getir.png";
+            this.button4.ImageList = this.imageList1;
+            this.button4.Location = new System.Drawing.Point(6, 98);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(89, 26);
+            this.button4.Size = new System.Drawing.Size(66, 49);
             this.button4.TabIndex = 2;
-            this.button4.Text = "EKLE";
             this.button4.UseVisualStyleBackColor = true;
             this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(320, 41);
+            this.dataGridView1.Location = new System.Drawing.Point(239, 12);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(498, 210);
+            this.dataGridView1.Size = new System.Drawing.Size(498, 322);
             this.dataGridView1.TabIndex = 6;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
@@ -154,9 +162,9 @@ namespace XStore
             this.groupBox2.Controls.Add(this.textBox2);
             this.groupBox2.Controls.Add(this.button2);
             this.groupBox2.Controls.Add(this.button6);
-            this.groupBox2.Location = new System.Drawing.Point(12, 72);
+            this.groupBox2.Location = new System.Drawing.Point(22, 189);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(203, 145);
+            this.groupBox2.Size = new System.Drawing.Size(211, 145);
             this.groupBox2.TabIndex = 21;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Bölge Ekle/Guncelle";
@@ -179,24 +187,33 @@ namespace XStore
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(9, 69);
+            this.button6.ImageKey = "getir.png";
+            this.button6.ImageList = this.imageList1;
+            this.button6.Location = new System.Drawing.Point(9, 83);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(89, 26);
+            this.button6.Size = new System.Drawing.Size(63, 47);
             this.button6.TabIndex = 2;
-            this.button6.Text = "EKLE";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "getir.png");
+            this.imageList1.Images.SetKeyName(1, "updateicon.jpg");
             // 
             // XStorePanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(830, 450);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(794, 346);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button1);
             this.Name = "XStorePanel";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -223,6 +240,7 @@ namespace XStore
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }
 
