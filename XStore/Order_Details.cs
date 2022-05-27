@@ -66,16 +66,17 @@ namespace XStore
         private void button1_Click(object sender, EventArgs e)
         {
             //Kaydet
-            if (textBox1.Text != null && numericUpDown1.Value != 0)
+            if (numericUpDown1.Value != 0)
             {
                 try
                 {
-                    string insertod = "Insert Into OrderDetails(ProductID,UnitPrice,Quantity,Discount) Values(@productid, @unitprice,@quantity,@discount) ";
+                    string insertod = "Insert Into OrderDetails(OrderID,ProductID,UnitPrice,Quantity,Discount) Values(@orderId, @productid, @unitprice,@quantity,@discount) ";
                     SqlCommand cmd = new SqlCommand(insertod, con);
+                    cmd.Parameters.AddWithValue("@orderId", comboBox2.SelectedValue);
                     cmd.Parameters.AddWithValue("@productid",comboBox1.SelectedValue);
                     cmd.Parameters.AddWithValue("@unitprice",numericUpDown1.Value );
                     cmd.Parameters.AddWithValue("@quantity",numericUpDown2.Value );
-                    cmd.Parameters.AddWithValue("@discount", textBox1.Text.ToString()); 
+                    cmd.Parameters.AddWithValue("@discount", numericUpDown3.Value); 
                     con.Open();
                     cmd.ExecuteNonQuery();
                     MessageBox.Show("İşlem Başarılı");
@@ -98,14 +99,13 @@ namespace XStore
         private void button2_Click(object sender, EventArgs e)
         {
             //Güncelle
-            string updatequery = "Update Categories SET  OrderDetails(ProductID = @productid ,UnitPrice = @unitprice ,Quantity = @quantity," +
-                "Discount = @discount where OrderID = @orderid AND ProductID = @productid ";
+            string updatequery = "Update OrderDetails SET ProductID = @productid ,UnitPrice = @unitprice ,Quantity = @quantity, Discount = @discount where OrderID = @orderid ";
             SqlCommand cmd = new SqlCommand(updatequery, con);
             cmd.Parameters.AddWithValue("@unitprice",numericUpDown1.Value);
             cmd.Parameters.AddWithValue("@quantity", numericUpDown2.Value);
-            cmd.Parameters.AddWithValue("@discount", Convert.ToDouble(textBox1.Text));
+            cmd.Parameters.AddWithValue("@discount", numericUpDown3.Value);
             cmd.Parameters.AddWithValue("@orderid", id);
-            cmd.Parameters.AddWithValue("@productid", id2);
+            cmd.Parameters.AddWithValue("@productid", comboBox1.SelectedValue);
             con.Open();
             cmd.ExecuteNonQuery();
             MessageBox.Show("İşlem Başarılı");
@@ -119,11 +119,12 @@ namespace XStore
             if (dataGridView1.SelectedRows.Count > 0)
             {
                 id = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value);
-                id2 = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[1].Value);
-                comboBox1.SelectedIndex=Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[2].Value.ToString());
-                numericUpDown1.Value = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[3].Value.ToString());
-                numericUpDown2.Value = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[4].Value.ToString());
-                textBox1.Text = dataGridView1.SelectedRows[0].Cells[4].Value.ToString();
+                //id2 = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[1].Value);
+                comboBox1.SelectedValue=Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[1].Value);
+                comboBox2.SelectedValue = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value);
+                numericUpDown1.Value = Convert.ToDecimal(dataGridView1.SelectedRows[0].Cells[2].Value);
+                numericUpDown2.Value = Convert.ToDecimal(dataGridView1.SelectedRows[0].Cells[3].Value);
+                numericUpDown3.Value= Convert.ToDecimal(dataGridView1.SelectedRows[0].Cells[4].Value);
             }
         }
     }

@@ -28,6 +28,40 @@ namespace XStore
             // TODO: This line of code loads data into the 'xStoreDBDataSet.Customers' table. You can move, or remove it, as needed.
             this.customersTableAdapter.Fill(this.xStoreDBDataSet.Customers);
 
+            try
+            {
+                string customerquery = "Select CustomerID,Name from Customers";
+                SqlDataAdapter dap = new SqlDataAdapter(customerquery, con);
+                DataTable dt = new DataTable();
+                dap.Fill(dt);
+                comboBox1.DataSource = dt;
+                comboBox1.ValueMember = "CustomerID";
+                comboBox1.DisplayMember = "Name";
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Hata");
+            }
+            try
+            {
+
+                string storequery = "Select StoreID,StoreName from XStores";
+                SqlDataAdapter dap1 = new SqlDataAdapter(storequery, con);
+                DataTable dt1 = new DataTable();
+                dap1.Fill(dt1);
+                comboBox2.DataSource = dt1;
+                comboBox2.ValueMember = "StoreID";
+                comboBox2.DisplayMember = "StoreName";
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Hata");
+
+            }
+
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -54,11 +88,11 @@ namespace XStore
                     string insertOrders = "Insert Into Orders(CustomerID,OrderDate,ShippedDate,ShipAdress,StoreID) " +
                         "Values(@customerid,@orderdate,@shippeddate,@shipadress,@storeid)";
                     SqlCommand cmd = new SqlCommand(insertOrders, con);
-                    cmd.Parameters.AddWithValue("@customerid", comboBox1.SelectedItem);
+                    cmd.Parameters.AddWithValue("@customerid", (comboBox1.SelectedValue));
                     cmd.Parameters.AddWithValue("@orderdate", dateTimePicker1.Value);
                     cmd.Parameters.AddWithValue("@shippeddate",dateTimePicker2.Value);
                     cmd.Parameters.AddWithValue("@shipadress", textBox1.Text);
-                    cmd.Parameters.AddWithValue("@storeid",comboBox2.SelectedItem);
+                    cmd.Parameters.AddWithValue("@storeid",comboBox2.SelectedValue);
 
                     con.Open();
                     cmd.ExecuteNonQuery();
@@ -102,7 +136,7 @@ namespace XStore
             string updatequery = "Update Orders SET CustomerID=@customerid,OrderDate=@orderdate,ShippedDate=@shippeddate,ShipAdress=@shipadress," +
                 "StoreID=@storeid where OrderId = @Orderid";
             SqlCommand cmd = new SqlCommand(updatequery, con);
-            cmd.Parameters.AddWithValue("@customerid",comboBox1.SelectedItem);
+            cmd.Parameters.AddWithValue("@customerid",comboBox1.SelectedValue);
             cmd.Parameters.AddWithValue("@orderdate",dateTimePicker1.Value);
             cmd.Parameters.AddWithValue("@shippeddate", dateTimePicker2.Value);
             cmd.Parameters.AddWithValue("@shipadress", textBox1.Text);
