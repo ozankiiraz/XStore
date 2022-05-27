@@ -20,6 +20,9 @@ namespace XStore
         private void button5_Click(object sender, EventArgs e)
         {
             //STORE
+            XStorePanel xs = new XStorePanel();
+            xs.Show();
+            this.Hide();
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -33,23 +36,32 @@ namespace XStore
 
         private void button1_Click(object sender, EventArgs e)
         {//CUSTOMERS
-
+            Customers cus = new Customers();
+            cus.Show();
+            this.Hide();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             //ORDERS
+            Orders or = new Orders();
+            or.Show();
+            this.Hide();
 
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            //SUPPLİERS
+            Suppliers sup = new Suppliers();
+            sup.Show();
+            this.Hide();
         }
 
         private void button6_Click(object sender, EventArgs e)
-        {//REGİON
-
+        {
+            Order_Details ORD = new Order_Details();
+            ORD.Show();
+            this.Hide();
         }
     }
 }

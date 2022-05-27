@@ -71,6 +71,12 @@
     <Compile Include="Orders.Designer.cs">
       <DependentUpon>Orders.cs</DependentUpon>
     </Compile>
+    <Compile Include="Order_Details.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Order_Details.Designer.cs">
+      <DependentUpon>Order_Details.cs</DependentUpon>
+    </Compile>
     <Compile Include="Product.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>XStoreDBDataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="XStoreDBDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>XStoreDBDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="XStoreDBDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>XStoreDBDataSet4.xsd</DependentUpon>
+    </Compile>
     <Compile Include="XStorePanel.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,6 +133,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Orders.resx">
       <DependentUpon>Orders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Order_Details.resx">
+      <DependentUpon>Order_Details.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Product.resx">
       <DependentUpon>Product.cs</DependentUpon>
@@ -177,6 +196,28 @@
     </None>
     <None Include="XStoreDBDataSet2.xss">
       <DependentUpon>XStoreDBDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="XStoreDBDataSet3.xsc">
+      <DependentUpon>XStoreDBDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="XStoreDBDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>XStoreDBDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XStoreDBDataSet3.xss">
+      <DependentUpon>XStoreDBDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="XStoreDBDataSet4.xsc">
+      <DependentUpon>XStoreDBDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="XStoreDBDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>XStoreDBDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="XStoreDBDataSet4.xss">
+      <DependentUpon>XStoreDBDataSet4.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

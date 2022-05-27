@@ -70,12 +70,13 @@ namespace XStore
             this.imageList1.Images.SetKeyName(7, "ürün.png");
             this.imageList1.Images.SetKeyName(8, "REG.png");
             this.imageList1.Images.SetKeyName(9, "MÜSTERİ1.png");
+            this.imageList1.Images.SetKeyName(10, "sipariis.jpg");
             // 
             // button2
             // 
             this.button2.BackColor = System.Drawing.Color.Beige;
             this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.ImageIndex = 2;
+            this.button2.ImageIndex = 10;
             this.button2.ImageList = this.imageList1;
             this.button2.Location = new System.Drawing.Point(57, 218);
             this.button2.Name = "button2";
@@ -135,13 +136,13 @@ namespace XStore
             // 
             this.button6.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.ImageIndex = 8;
+            this.button6.ImageIndex = 2;
             this.button6.ImageList = this.imageList1;
             this.button6.Location = new System.Drawing.Point(576, 218);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(231, 113);
             this.button6.TabIndex = 5;
-            this.button6.Text = "REGION      ";
+            this.button6.Text = "ORDER DETAİL";
             this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button6.UseVisualStyleBackColor = false;
             this.button6.Click += new System.EventHandler(this.button6_Click);
@@ -149,11 +150,11 @@ namespace XStore
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Firebrick;
-            this.label1.Location = new System.Drawing.Point(110, 30);
+            this.label1.Location = new System.Drawing.Point(72, 30);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(638, 29);
+            this.label1.Size = new System.Drawing.Size(735, 33);
             this.label1.TabIndex = 6;
             this.label1.Text = "WELCOME TO X-STORES AUTOMATION SYSTEM";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
