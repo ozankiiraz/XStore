@@ -29,6 +29,8 @@ namespace XStore
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Product));
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button2 = new System.Windows.Forms.Button();
@@ -44,6 +46,7 @@ namespace XStore
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
@@ -52,9 +55,9 @@ namespace XStore
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(837, 52);
+            this.button1.Location = new System.Drawing.Point(12, 12);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(229, 35);
+            this.button1.Size = new System.Drawing.Size(421, 35);
             this.button1.TabIndex = 0;
             this.button1.Text = "GETİR";
             this.button1.UseVisualStyleBackColor = true;
@@ -63,21 +66,22 @@ namespace XStore
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(388, 93);
+            this.dataGridView1.Location = new System.Drawing.Point(439, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(678, 263);
+            this.dataGridView1.Size = new System.Drawing.Size(584, 263);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(231, 151);
+            this.button2.ImageKey = "getir.png";
+            this.button2.ImageList = this.imageList1;
+            this.button2.Location = new System.Drawing.Point(231, 140);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(89, 26);
+            this.button2.Size = new System.Drawing.Size(89, 67);
             this.button2.TabIndex = 2;
-            this.button2.Text = "EKLE";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -95,20 +99,21 @@ namespace XStore
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.textBox1);
             this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Location = new System.Drawing.Point(58, 362);
+            this.groupBox1.Location = new System.Drawing.Point(12, 52);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(421, 232);
+            this.groupBox1.Size = new System.Drawing.Size(421, 223);
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Urun Ekle/Guncelle";
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(326, 151);
+            this.button3.ImageKey = "updateicon.jpg";
+            this.button3.ImageList = this.imageList1;
+            this.button3.Location = new System.Drawing.Point(329, 140);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(89, 26);
+            this.button3.Size = new System.Drawing.Size(89, 67);
             this.button3.TabIndex = 21;
-            this.button3.Text = "Güncelle";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -131,7 +136,7 @@ namespace XStore
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(46, 121);
+            this.label4.Location = new System.Drawing.Point(248, 70);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(38, 17);
             this.label4.TabIndex = 10;
@@ -140,7 +145,7 @@ namespace XStore
             // numericUpDown1
             // 
             this.numericUpDown1.DecimalPlaces = 2;
-            this.numericUpDown1.Location = new System.Drawing.Point(93, 116);
+            this.numericUpDown1.Location = new System.Drawing.Point(295, 65);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(120, 22);
             this.numericUpDown1.TabIndex = 9;
@@ -195,11 +200,19 @@ namespace XStore
             this.textBox1.Size = new System.Drawing.Size(100, 22);
             this.textBox1.TabIndex = 3;
             // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "getir.png");
+            this.imageList1.Images.SetKeyName(1, "updateicon.jpg");
+            // 
             // Product
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1078, 606);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(1042, 299);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.button1);
@@ -232,5 +245,6 @@ namespace XStore
         private System.Windows.Forms.NumericUpDown numericUpDown2;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }
