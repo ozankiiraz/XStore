@@ -75,8 +75,6 @@ namespace XStore
             // 
             // comboBox1
             // 
-            this.comboBox1.DataSource = this.bindingSource1;
-            this.comboBox1.DisplayMember = "Surname";
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(143, 31);
             this.comboBox1.Name = "comboBox1";
@@ -153,8 +151,6 @@ namespace XStore
             // 
             // comboBox2
             // 
-            this.comboBox2.DataSource = this.xStoresBindingSource1;
-            this.comboBox2.DisplayMember = "StoreName";
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(143, 182);
             this.comboBox2.Name = "comboBox2";
