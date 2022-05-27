@@ -152,7 +152,7 @@ namespace XStore
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 17F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Firebrick;
-            this.label1.Location = new System.Drawing.Point(72, 30);
+            this.label1.Location = new System.Drawing.Point(68, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(735, 33);
             this.label1.TabIndex = 6;
