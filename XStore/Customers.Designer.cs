@@ -32,8 +32,8 @@ namespace XStore
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Customers));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btn_Getir = new System.Windows.Forms.Button();
             this.btn_Guncelle = new System.Windows.Forms.Button();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.button1 = new System.Windows.Forms.Button();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -41,8 +41,8 @@ namespace XStore
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btn_Getir = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -64,17 +64,6 @@ namespace XStore
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Müşteri Ekle/Güncelle";
             // 
-            // btn_Getir
-            // 
-            this.btn_Getir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
-            this.btn_Getir.Location = new System.Drawing.Point(17, 12);
-            this.btn_Getir.Name = "btn_Getir";
-            this.btn_Getir.Size = new System.Drawing.Size(318, 33);
-            this.btn_Getir.TabIndex = 23;
-            this.btn_Getir.Text = "Getir";
-            this.btn_Getir.UseVisualStyleBackColor = false;
-            this.btn_Getir.Click += new System.EventHandler(this.btn_Getir_Click);
-            // 
             // btn_Guncelle
             // 
             this.btn_Guncelle.ImageKey = "updateicon.jpg";
@@ -85,6 +74,13 @@ namespace XStore
             this.btn_Guncelle.TabIndex = 22;
             this.btn_Guncelle.UseVisualStyleBackColor = true;
             this.btn_Guncelle.Click += new System.EventHandler(this.btn_Guncelle_Click);
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "updateicon.jpg");
+            this.imageList1.Images.SetKeyName(1, "getir.png");
             // 
             // button1
             // 
@@ -145,6 +141,17 @@ namespace XStore
             this.textBox1.Size = new System.Drawing.Size(100, 22);
             this.textBox1.TabIndex = 15;
             // 
+            // btn_Getir
+            // 
+            this.btn_Getir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.btn_Getir.Location = new System.Drawing.Point(17, 12);
+            this.btn_Getir.Name = "btn_Getir";
+            this.btn_Getir.Size = new System.Drawing.Size(318, 33);
+            this.btn_Getir.TabIndex = 23;
+            this.btn_Getir.Text = "Getir";
+            this.btn_Getir.UseVisualStyleBackColor = false;
+            this.btn_Getir.Click += new System.EventHandler(this.btn_Getir_Click);
+            // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -156,13 +163,6 @@ namespace XStore
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "updateicon.jpg");
-            this.imageList1.Images.SetKeyName(1, "getir.png");
-            // 
             // Customers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -173,6 +173,7 @@ namespace XStore
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
             this.Name = "Customers";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Customers";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

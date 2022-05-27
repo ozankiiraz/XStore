@@ -30,6 +30,7 @@ namespace XStore
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Orders));
             this.label1 = new System.Windows.Forms.Label();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -54,6 +55,7 @@ namespace XStore
             this.xStoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.xStoresTableAdapter = new XStore.XStoreDBDataSet1TableAdapters.XStoresTableAdapter();
             this.xStoresTableAdapter1 = new XStore.XStoreDBDataSet2TableAdapters.XStoresTableAdapter();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xStoreDBDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xStoresBindingSource1)).BeginInit();
@@ -176,7 +178,6 @@ namespace XStore
             // 
             this.groupBox1.Controls.Add(this.button3);
             this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.comboBox2);
             this.groupBox1.Controls.Add(this.label1);
@@ -187,38 +188,40 @@ namespace XStore
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.dateTimePicker1);
             this.groupBox1.Controls.Add(this.dateTimePicker2);
-            this.groupBox1.Location = new System.Drawing.Point(387, 33);
+            this.groupBox1.Location = new System.Drawing.Point(12, 62);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(374, 271);
+            this.groupBox1.Size = new System.Drawing.Size(374, 293);
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Sipariş Ekle/Güncelle";
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(222, 221);
+            this.button3.ImageKey = "updateicon.jpg";
+            this.button3.ImageList = this.imageList1;
+            this.button3.Location = new System.Drawing.Point(108, 221);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(84, 44);
+            this.button3.Size = new System.Drawing.Size(84, 66);
             this.button3.TabIndex = 12;
-            this.button3.Text = "Guncelle";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(123, 221);
+            this.button2.ImageKey = "getir.png";
+            this.button2.ImageList = this.imageList1;
+            this.button2.Location = new System.Drawing.Point(18, 221);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(84, 44);
+            this.button2.Size = new System.Drawing.Size(84, 66);
             this.button2.TabIndex = 11;
-            this.button2.Text = "Kaydet";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(23, 221);
+            this.button1.Location = new System.Drawing.Point(12, 12);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(84, 44);
+            this.button1.Size = new System.Drawing.Size(374, 44);
             this.button1.TabIndex = 10;
             this.button1.Text = "Getir";
             this.button1.UseVisualStyleBackColor = true;
@@ -227,11 +230,11 @@ namespace XStore
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(13, 33);
+            this.dataGridView1.Location = new System.Drawing.Point(407, 12);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(346, 347);
+            this.dataGridView1.Size = new System.Drawing.Size(665, 343);
             this.dataGridView1.TabIndex = 11;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
@@ -257,14 +260,24 @@ namespace XStore
             // 
             this.xStoresTableAdapter1.ClearBeforeFill = true;
             // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "getir.png");
+            this.imageList1.Images.SetKeyName(1, "updateicon.jpg");
+            // 
             // Orders
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 461);
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.ClientSize = new System.Drawing.Size(1084, 369);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.button1);
             this.Name = "Orders";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Orders";
             this.Load += new System.EventHandler(this.Orders_Load);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
@@ -306,5 +319,6 @@ namespace XStore
         private XStoreDBDataSet2 xStoreDBDataSet2;
         private System.Windows.Forms.BindingSource xStoresBindingSource1;
         private XStoreDBDataSet2TableAdapters.XStoresTableAdapter xStoresTableAdapter1;
+        private System.Windows.Forms.ImageList imageList1;
     }
 }
