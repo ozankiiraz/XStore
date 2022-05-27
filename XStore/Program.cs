@@ -16,7 +16,7 @@ namespace XStore
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new XStorePanel());
+            Application.Run(new Product());
         }
     }
 }
