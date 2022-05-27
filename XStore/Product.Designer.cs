@@ -33,6 +33,7 @@ namespace XStore
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button2 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
@@ -43,7 +44,6 @@ namespace XStore
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
@@ -79,7 +79,6 @@ namespace XStore
             this.button2.TabIndex = 2;
             this.button2.Text = "EKLE";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // groupBox1
             // 
@@ -101,6 +100,15 @@ namespace XStore
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Urun Ekle/Guncelle";
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(326, 151);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(89, 26);
+            this.button3.TabIndex = 21;
+            this.button3.Text = "Güncelle";
+            this.button3.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -184,15 +192,6 @@ namespace XStore
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 22);
             this.textBox1.TabIndex = 3;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(326, 151);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(89, 26);
-            this.button3.TabIndex = 21;
-            this.button3.Text = "Güncelle";
-            this.button3.UseVisualStyleBackColor = true;
             // 
             // Product
             // 
