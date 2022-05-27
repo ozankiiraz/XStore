@@ -111,5 +111,7 @@ namespace XStore
             Temizle();
             ShowCategories();
         }
+
+
     }
 }

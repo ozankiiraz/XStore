@@ -38,30 +38,45 @@ namespace XStore
 
         private void button4_Click(object sender, EventArgs e)
         {
-            string insertSup = "Insert Into XStores(StoreName, RegionID) Values(@storeName, @rId)";
-            SqlCommand cmd = new SqlCommand(insertSup, con);
-            cmd.Parameters.AddWithValue("storeName", textBox1.Text);
-            MessageBox.Show(comboBox1.SelectedValue.ToString());
-            cmd.Parameters.AddWithValue("rId", Convert.ToInt32(comboBox1.SelectedValue));
- 
+            if (textBox1!= null){
+                string insertSup = "Insert Into XStores(StoreName, RegionID) Values(@storeName, @rId)";
+                SqlCommand cmd = new SqlCommand(insertSup, con);
+                cmd.Parameters.AddWithValue("storeName", textBox1.Text);
+                MessageBox.Show(comboBox1.SelectedValue.ToString());
+                cmd.Parameters.AddWithValue("rId", Convert.ToInt32(comboBox1.SelectedValue));
 
-            con.Open();
-            cmd.ExecuteNonQuery();
-            MessageBox.Show("İşlem Başarılı");
-            con.Close();
-            Temizle();
+
+                con.Open();
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("İşlem Başarılı");
+                con.Close();
+                Temizle();
+            }
+            else
+            {
+                MessageBox.Show("Lütfen Mağaza Adı Giriniz.");
+            }
+
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-            string insertReg = "Insert Into Region(RegionDescription) Values(@desc)";
-            SqlCommand cmd = new SqlCommand(insertReg, con);
-            cmd.Parameters.AddWithValue("desc", textBox2.Text);
-            con.Open();
-            cmd.ExecuteNonQuery();
-            MessageBox.Show("İşlem Başarılı");
-            con.Close();
-            Temizle();
+            if (textBox2.Text != null)
+            {
+                string insertReg = "Insert Into Region(RegionDescription) Values(@desc)";
+                SqlCommand cmd = new SqlCommand(insertReg, con);
+                cmd.Parameters.AddWithValue("desc", textBox2.Text);
+                con.Open();
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("İşlem Başarılı");
+                con.Close();
+                Temizle();
+            }
+            else
+            {
+                MessageBox.Show("Lütfen Bölge Adı Giriniz.");
+            }
+
         }
 
         private void Temizle()
