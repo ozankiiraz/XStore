@@ -95,10 +95,40 @@ namespace XStore
                 }
             }
             }
-
+        int id;
         private void button3_Click(object sender, EventArgs e)
         {
+            //gUNCELLE
+            string updatequery = "Update Orders SET CustomerID=@customerid,OrderDate=@orderdate,ShippedDate=@shippeddate,ShipAdress=@shipadress," +
+                "StoreID=@storeid where OrderId = @Orderid";
+            SqlCommand cmd = new SqlCommand(updatequery, con);
+            cmd.Parameters.AddWithValue("@customerid",comboBox1.SelectedItem);
+            cmd.Parameters.AddWithValue("@orderdate",dateTimePicker1.Value);
+            cmd.Parameters.AddWithValue("@shippeddate", dateTimePicker2.Value);
+            cmd.Parameters.AddWithValue("@shipadress", textBox1.Text);
+            cmd.Parameters.AddWithValue("@storeid", comboBox2.SelectedValue);
+            cmd.Parameters.AddWithValue("@Orderid", id);
+            con.Open();
+            cmd.ExecuteNonQuery();
+            MessageBox.Show("İşlem Başarılı");
+            con.Close();
+            Temizle();
+            SiparisleriGetir();
 
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
+                id = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[0].Value);
+               comboBox1.SelectedValue = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[1].Value.ToString());
+               dateTimePicker1.Value =Convert.ToDateTime(dataGridView1.SelectedRows[0].Cells[2].Value.ToString());
+                dateTimePicker2.Value = Convert.ToDateTime(dataGridView1.SelectedRows[0].Cells[3].Value.ToString());
+                textBox1.Text = dataGridView1.SelectedRows[0].Cells[4].Value.ToString();
+                comboBox2.SelectedValue = Convert.ToInt32(dataGridView1.SelectedRows[0].Cells[5].Value.ToString());
+
+            }
         }
     }
 }
